@@ -1,0 +1,14 @@
+<section class="hero">
+  <div>
+    <h1>Worst Hero Ever</h1>
+    <p>Some text here...</p>
+  </div>
+
+  <div>
+    <a href="#">Click Me!</a>
+  </div>
+</section>
+
+<% content_for :head, flush: true do %>
+  <%= stylesheet_link_tag 'hero/base', media: 'screen', data: { turbo_track: 'reload' } %>
+<% end %>
