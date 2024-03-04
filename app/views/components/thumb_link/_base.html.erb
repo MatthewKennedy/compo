@@ -1,16 +1,16 @@
-<% component_name = 'erb-vc--compo--thumb_link' %>
+<% component_name = "thumb_link" %>
 <%# locals: (image: nil, link: nil, css_variables: nil, theme: nil) -%>
 
 <!-- the top level div should always serve as a wrapper for the CSS to target inward -->
-<div class="<%= component_name %> <%= theme %>" style="<%= css_variables %>">
+<div class="<%= component_id(component_name) %> <%= theme %>" style="<%= css_variables %>">
   <div>
     <a href="#">
-      <div class="<%= component_name %>--image">
+      <div class="<%= component_id(component_name) %>--image">
         <img draggable="false" class="css-askry2" src="https://www.polestar.com/dato-assets/11286/1674207785-01-2-polestar-home-handoff-section-m-3x.jpg?w=620" style="opacity: 1;">
       </div>
-      <div class="<%= component_name %>--text">
+      <div class="<%= component_id(component_name) %>--text">
         <div>
-          <h3>This is the headline</h3>
+          <h3>This is the headline...</h3>
           <p>Sub text</p>
         </div>
       </div>
@@ -18,12 +18,10 @@
   </div>
 </div>
 
-<% content_for :view_component_head do %>
-  <% @combo_thumb_link = true %>
-
+<% component_css(component_name) do %>
   <style>
-    div.<%= component_name %> {
-      container: <%= component_name %> / inline-size;
+    div.<%= component_id(component_name) %> {
+      container: <%= component_id(component_name) %> / inline-size;
 
       /* Component Base Theme */
       --color: black;
@@ -41,7 +39,7 @@
         }
       }
 
-      .<%= component_name %>--image {
+      .<%= component_id(component_name) %>--image {
         display: flex;
         width: 33%;
         max-width: max-content;
@@ -55,17 +53,17 @@
         }
       }
 
-     .<%= component_name %>--text {
+     .<%= component_id(component_name) %>--text {
         padding-inline-start: 1em;
         flex: 1;
       }
 
       /* Container 600px or less */
-      @container <%= component_name %> (width <= 600px) {
+      @container <%= component_id(component_name) %> (width <= 600px) {
         a {
           color: green !important;
         }
       }
     }
   </style>
-<% end unless @combo_thumb_link %>
+<% end %>
