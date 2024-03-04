@@ -1,6 +1,6 @@
-<%# locals: (tagline: 'Hero Tag Line Goes Here', link_text: 'Link Text', css_variables: nil) -%>
+<%# locals: (tagline: 'Hero Tag Line Goes Here', link_text: 'Link Text', css_variables: nil, theme_name: nil) -%>
 
-<section class="hero" style="<%= css_variables %>">
+<section class="hero <%= theme_name %>" style="<%= css_variables %>">
   <div>
     <h1><%= tagline %></h1>
     <a href="#"><%= link_text %></a>
@@ -10,12 +10,23 @@
 <% content_for :head, flush: true do %>
   <style>
     section.hero {
-
       --hero-bg-color: pink;
       --hero-h1-font: Verdana, sans-serif;
       --hero-h1-color: black;
       --hero-link-color: black;
       --hero-hover-ink-color: black;
+
+      &.back_in_black {
+       --hero-bg-color: orange;
+      }
+
+      &.surf_is_up {
+        --hero-bg-color: lightblue;
+        --hero-h1-font: Verdana, sans-serif;
+        --hero-h1-color: pink;
+        --hero-link-color: pink;
+        --hero-hover-ink-color: yellow;
+      }
 
       position: relative;
       display: grid;

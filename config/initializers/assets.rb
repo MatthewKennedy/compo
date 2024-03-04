@@ -7,4 +7,4 @@ Rails.application.config.assets.version = "1.0"
 # Rails.application.config.assets.paths << Emoji.images_path
 
 Rails.application.config.assets.paths << Rails.root.join("app/views/components")
-Rails.application.config.assets.excluded_file_types += [".erb", ".rb"]
+# Rails.application.config.assets.excluded_file_types += [".erb", ".rb"]
