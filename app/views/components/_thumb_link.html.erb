@@ -1,0 +1,66 @@
+<%# locals: (image: nil, link: nil, css_variables: nil, theme: nil) -%>
+
+<%= erbvc_html(theme: theme, css_vars: css_variables) do %>
+  <div>
+    <a href="#">
+      <div>
+        <img src="https://www.polestar.com/dato-assets/11286/1674207785-01-2-polestar-home-handoff-section-m-3x.jpg?w=620">
+      </div>
+
+      <div>
+        <div>
+          <h3>This is the headline...</h3>
+          <p><%= erbvc_name %></p>
+        </div>
+      </div>
+    </a>
+  </div>
+<% end %>
+
+<% erbvc_css do %>
+  <style>
+    <%= erbvc_container_class %> {
+      container: <%= erbvc_id %> / inline-size;
+
+      --color: black;
+      --background-color: white;
+
+      background-color: var(--background-color);
+
+      > div > a {
+        text-decoration: none;
+        color: var(--color);
+        display: flex;
+
+        &:hover img {
+          scale: 1.03;
+        }
+
+        > div:nth-child(1) {
+          display: flex;
+          width: 33%;
+          max-width: max-content;
+          min-width: 150px;
+          overflow: hidden;
+
+          & img {
+            width: 100%;
+            max-width: 100%;
+            transition-duration: 500ms;
+          }
+        }
+
+        > div:nth-child(2) {
+          padding-inline-start: 1em;
+          flex: 1;
+        }
+      }
+
+      @container <%= erbvc_id %> (width <= 600px) {
+        a {
+          color: green !important;
+        }
+      }
+    }
+  </style>
+<% end %>

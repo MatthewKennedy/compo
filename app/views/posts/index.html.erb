@@ -1,10 +1,10 @@
-<%= render "components/thumb_link/base" %>
+<%= render "components/thumb_link" %>
 
-<%= render "components/hero/base" %>
+<%= render "components/hero" %>
 
-<%= render "components/hero/base", tagline: "Hugo Boss", link_text: "Buy Today", css_variables: '--hero-bg-color: orange;' %>
+<%= render "components/hero", tagline: "Hugo Boss", link_text: "Buy Today", css_variables: '--hero-bg-color: orange;' %>
 
-<%= render "components/hero/base", tagline: "Tom Ford",
+<%= render "components/hero", tagline: "Tom Ford",
                                    link_text: "Smell Good Now",
                                    css_variables: '--hero-bg-color: black;
                                                    --hero-h1-color: white;
@@ -13,7 +13,7 @@
                                                    --hero-h1-font: Brush Script MT, cursive;' %>
 
 
-<%= render partial: "components/hero/base", locals: {
+<%= render partial: "components/hero", locals: {
                                                       tagline: "Cali Style",
                                                       link_text: "Only This Week",
                                                       theme_name: "surf_is_up"
