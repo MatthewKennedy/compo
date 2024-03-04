@@ -1,0 +1,71 @@
+<% component_name = 'erb-vc--compo--thumb_link' %>
+<%# locals: (image: nil, link: nil, css_variables: nil, theme: nil) -%>
+
+<!-- the top level div should always serve as a wrapper for the CSS to target inward -->
+<div class="<%= component_name %> <%= theme %>" style="<%= css_variables %>">
+  <div>
+    <a href="#">
+      <div class="<%= component_name %>--image">
+        <img draggable="false" class="css-askry2" src="https://www.polestar.com/dato-assets/11286/1674207785-01-2-polestar-home-handoff-section-m-3x.jpg?w=620" style="opacity: 1;">
+      </div>
+      <div class="<%= component_name %>--text">
+        <div>
+          <h3>This is the headline</h3>
+          <p>Sub text</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<% content_for :view_component_head do %>
+  <% @combo_thumb_link = true %>
+
+  <style>
+    div.<%= component_name %> {
+      container: <%= component_name %> / inline-size;
+
+      /* Component Base Theme */
+      --color: black;
+      --background-color: white;
+
+      background-color: var(--background-color);
+
+      > div > a {
+        text-decoration: none;
+        color: var(--color);
+        display: flex;
+
+        &:hover img {
+          scale: 1.03;
+        }
+      }
+
+      .<%= component_name %>--image {
+        display: flex;
+        width: 33%;
+        max-width: max-content;
+        min-width: 150px;
+        overflow: hidden;
+
+        & img {
+          width: 100%;
+          max-width: 100%;
+          transition-duration: 500ms;
+        }
+      }
+
+     .<%= component_name %>--text {
+        padding-inline-start: 1em;
+        flex: 1;
+      }
+
+      /* Container 600px or less */
+      @container <%= component_name %> (width <= 600px) {
+        a {
+          color: green !important;
+        }
+      }
+    }
+  </style>
+<% end unless @combo_thumb_link %>

@@ -7,7 +7,8 @@
   </div>
 </section>
 
-<% content_for :head, flush: true do %>
+<% content_for :view_component_head do %>
+  <% @combo_hero = true %>
   <style>
     section.Compo--hero {
       --hero-bg-color: pink;
@@ -56,4 +57,4 @@
       }
     }
   </style>
-<% end %>
+<% end unless @combo_hero%>
