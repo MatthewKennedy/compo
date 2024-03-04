@@ -9,8 +9,8 @@
 
       <div>
         <div>
-          <h3>This is the headline...</h3>
-          <p><%= erbvc_name %></p>
+          <h3>At home test drive</h3>
+          <p>We'll bring the experience, and the car, to you</p>
         </div>
       </div>
     </a>
@@ -45,6 +45,7 @@
 
           & img {
             width: 100%;
+            font-weight: lighter;
             max-width: 100%;
             transition-duration: 500ms;
           }
@@ -53,12 +54,26 @@
         > div:nth-child(2) {
           padding-inline-start: 1em;
           flex: 1;
+
+          & h3 {
+            font-size: 1.875rem;
+            margin-block-start: 0;
+            margin-block-end: 0;
+          }
         }
       }
+    }
 
-      @container <%= erbvc_id %> (width <= 600px) {
-        a {
-          color: green !important;
+    @container <%= erbvc_id %> (width <= 620px) {
+      <%= erbvc_container_class %> > div > a {
+        display: block;
+
+        > div:nth-child(1) {
+          width: 100%;
+        }
+
+        > div:nth-child(2) {
+          padding-inline-start: 0;
         }
       }
     }
