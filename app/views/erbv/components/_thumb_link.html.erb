@@ -19,9 +19,7 @@
 
 <% erbv_css do %>
   <style>
-    <%= erbv_class %> {
-      container: <%= erbv_id %> / inline-size;
-
+    <%= erbv_component_base_selector %> {
       --color: #212529;
       --background-color: white;
 
@@ -66,8 +64,8 @@
       }
     }
 
-    @container <%= erbv_id %> (width <= 620px) {
-      <%= erbv_class %> > div > a {
+    @container <%= erbv_css_container_query_id %> (width <= 620px) {
+      <%= erbv_component_base_selector %> > div > a {
         display: block;
 
         > div:nth-child(1) {
@@ -81,10 +79,4 @@
       }
     }
   </style>
-<% end %>
-
-<% erbv_js do %>
-  <script>
-      console.log("hello")
-  </script>
 <% end %>

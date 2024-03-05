@@ -1,6 +1,10 @@
 module ApplicationHelper
   def erbv_id
-    "#{Rails.application.class.module_parent_name.downcase}--#{erbv_name}"
+    "erbv--#{Rails.application.class.module_parent_name.downcase}--#{erbv_name}"
+  end
+
+  def erbv_css_container_query_id
+    erbv_id
   end
 
   def erbv_css(&block)
@@ -22,7 +26,7 @@ module ApplicationHelper
   end
 
   def erbv_html(theme: nil, css_vars: nil, &block)
-    content_tag(:div, class: "#{erbv_id} #{theme}", style: "css_vars", &block)
+    content_tag(:div, class: "#{erbv_id} #{theme}", style: "container: #{erbv_css_container_query_id} / inline-size;", &block)
   end
 
   def erbv_name
@@ -31,7 +35,8 @@ module ApplicationHelper
     end
   end
 
-  def erbv_class
+  # Defines a top level selector for the component
+  def erbv_component_base_selector
     "div.#{erbv_id}"
   end
 end
