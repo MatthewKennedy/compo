@@ -1,6 +1,6 @@
-<%# locals: (img_src: nil, href: '#', title:, subtitle:, css_variables: nil, theme: nil) -%>
+<%# locals: (img_src: nil, href: '#', title:, subtitle:, style: nil, theme: nil) -%>
 
-<%= erbv_html do %>
+<%= erbv_html(theme: theme, style: style) do %>
   <div>
     <a href="<%= href %>">
       <div>
@@ -22,6 +22,10 @@
     <%= erbv_component_base_selector %> {
       --color: #212529;
       --background-color: white;
+
+      &.cta {
+        --background-color: rgb(255, 224, 224);
+      }
 
       background-color: var(--background-color);
 
