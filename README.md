@@ -1,24 +1,19 @@
-# README
+# Compo an ERBV Playground
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A playground Rails application for exploring component style view architecture with ERB files.
 
-Things you may want to cover:
+## Why?
 
-* Ruby version
+There are several good Ruby based View Component gems available, but it feels nice just to keep within the ERB.
 
-* System dependencies
+### ERBV Aims to: 
 
-* Configuration
+- Get back to HTML & CSS, generating HTML from a Ruby Class alienates FE devs.
+- Borrow some of the nice co-location architecture for Vue/React.
+- Provide a modern CSS first themeable components without scoping the component to death with CSS classes.
 
-* Database creation
+## Usage
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Install ruby 3.3.0
+- `bundle` 
+- `rails s`
