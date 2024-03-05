@@ -8,7 +8,7 @@ There are several good Ruby based View Component gems available, but it feels ni
 
 ### ERBV Aims to: 
 
-- Get back to HTML & CSS, generating HTML from a Ruby Class alienates FE devs.
+- Get back to HTML & CSS. (Generating HTML from a Ruby Class alienates FE devs).
 - Borrow some of the nice co-location architecture for Vue/React.
 - Provide a modern CSS first themeable components without scoping the component to death with CSS classes.
 
