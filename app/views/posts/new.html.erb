@@ -7,3 +7,24 @@
 <div>
   <%= link_to "Back to posts", posts_path %>
 </div>
+
+
+<%= render "components/hero" %>
+
+<%= render "components/hero", tagline: "Hugo Boss", link_text: "Buy Today", css_variables: '--hero-bg-color: orange;' %>
+
+<%= render "components/hero", tagline: "Tom Ford",
+                                   link_text: "Smell Good Now",
+                                   css_variables: '--hero-bg-color: black;
+                                                   --hero-h1-color: white;
+                                                   --hero-link-color:white;
+                                                   --hero-hover-link-color: red;
+                                                   --hero-h1-font: Brush Script MT, cursive;' %>
+
+
+<%= render partial: "components/hero", locals: {
+                                                      tagline: "Cali Style",
+                                                      link_text: "Only This Week",
+                                                      theme_name: "surf_is_up"
+                                                    }
+                                                  %>

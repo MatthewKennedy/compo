@@ -1,16 +1,16 @@
-<%# locals: (image: nil, link: nil, css_variables: nil, theme: nil) -%>
+<%# locals: (img_src: nil, href: '#', title:, subtitle:, css_variables: nil, theme: nil) -%>
 
 <%= erbvc_html(theme: theme, css_vars: css_variables) do %>
   <div>
-    <a href="#">
+    <a href="<%= href %>">
       <div>
-        <img src="https://www.polestar.com/dato-assets/11286/1674207785-01-2-polestar-home-handoff-section-m-3x.jpg?w=620">
+        <img src="<%= img_src %>">
       </div>
 
       <div>
         <div>
-          <h3>At home test drive</h3>
-          <p>We'll bring the experience, and the car, to you</p>
+          <h3><%= title %></h3>
+          <p><%= subtitle %></p>
         </div>
       </div>
     </a>
@@ -22,7 +22,7 @@
     <%= erbvc_container_class %> {
       container: <%= erbvc_id %> / inline-size;
 
-      --color: black;
+      --color: #212529;
       --background-color: white;
 
       background-color: var(--background-color);
@@ -56,8 +56,10 @@
           flex: 1;
 
           & h3 {
+            color: var(--color);
             font-size: 1.875rem;
-            margin-block-start: 0;
+            font-weight: 400;
+            margin-block-start: -.4rem;
             margin-block-end: 0;
           }
         }
@@ -73,6 +75,7 @@
         }
 
         > div:nth-child(2) {
+          margin-block-start: 1rem;
           padding-inline-start: 0;
         }
       }
