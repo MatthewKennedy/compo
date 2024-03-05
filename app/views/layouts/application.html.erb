@@ -7,11 +7,11 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag :all, "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
     <%= yield :head %>
-    <%= yield :erb_view_component_head_css %>
+    <%= yield :erbv_css %>
+    <%= yield :erbv_js %>
   </head>
 
   <body>

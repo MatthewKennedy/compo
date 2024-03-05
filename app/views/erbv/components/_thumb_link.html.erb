@@ -1,6 +1,6 @@
 <%# locals: (img_src: nil, href: '#', title:, subtitle:, css_variables: nil, theme: nil) -%>
 
-<%= erbvc_html(theme: theme, css_vars: css_variables) do %>
+<%= erbv_html(theme: theme, css_vars: css_variables) do %>
   <div>
     <a href="<%= href %>">
       <div>
@@ -17,10 +17,10 @@
   </div>
 <% end %>
 
-<% erbvc_css do %>
+<% erbv_css do %>
   <style>
-    <%= erbvc_container_class %> {
-      container: <%= erbvc_id %> / inline-size;
+    <%= erbv_class %> {
+      container: <%= erbv_id %> / inline-size;
 
       --color: #212529;
       --background-color: white;
@@ -66,8 +66,8 @@
       }
     }
 
-    @container <%= erbvc_id %> (width <= 620px) {
-      <%= erbvc_container_class %> > div > a {
+    @container <%= erbv_id %> (width <= 620px) {
+      <%= erbv_class %> > div > a {
         display: block;
 
         > div:nth-child(1) {
@@ -81,4 +81,10 @@
       }
     }
   </style>
+<% end %>
+
+<% erbv_js do %>
+  <script>
+      console.log("hello")
+  </script>
 <% end %>

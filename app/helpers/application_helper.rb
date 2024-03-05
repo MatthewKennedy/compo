@@ -1,34 +1,37 @@
 module ApplicationHelper
-  def erbvc_id
-    "#{Rails.application.class.module_parent_name.downcase}--#{erbvc_name}"
+  def erbv_id
+    "#{Rails.application.class.module_parent_name.downcase}--#{erbv_name}"
   end
 
-  def erbvc_css(&block)
-    return if instance_variable_get(erbvc_var)
+  def erbv_css(&block)
+    return if instance_variable_get(erbv_var("css"))
 
-    instance_variable_set(erbvc_var, true)
-    content_for :erb_view_component_head_css do
-      yield
+    instance_variable_set(erbv_var("css"), true)
+    content_for(:erbv_css, &block)
+  end
+
+  def erbv_js(&block)
+    return if instance_variable_get(erbv_var("js"))
+
+    instance_variable_set(erbv_var("js"), true)
+    content_for(:erbv_js, &block)
+  end
+
+  def erbv_var(postfix)
+    "@#{Rails.application.class.module_parent_name.downcase}_#{erbv_name}_erbv_#{postfix}"
+  end
+
+  def erbv_html(theme: nil, css_vars: nil, &block)
+    content_tag(:div, class: "#{erbv_id} #{theme}", style: "css_vars", &block)
+  end
+
+  def erbv_name
+    caller_locations.each do |location|
+      return location.path.split(".").first.split("/").last.sub(/^_/, "") if location&.path&.ends_with?(".erb")
     end
   end
 
-  def erbvc_var
-    "@#{Rails.application.class.module_parent_name.downcase}_#{erbvc_name}_erbcv"
-  end
-
-  def erbvc_html(theme: nil, css_vars: nil, &block)
-    content_tag(:div, class: "#{erbvc_id} #{theme}", style: "css_vars", &block)
-  end
-
-  def erbvc_name
-    caller_path.split(".").first.split("/").last.sub(/^_/, "")
-  end
-
-  def caller_path
-    caller_locations(2, 1).first.path
-  end
-
-  def erbvc_container_class
-    "div.#{erbvc_id}"
+  def erbv_class
+    "div.#{erbv_id}"
   end
 end
