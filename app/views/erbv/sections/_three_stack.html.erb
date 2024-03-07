@@ -1,5 +1,6 @@
 <%# locals: (components: []) -%>
 
+<%= erbv_html(tag: :section) do %>
 <section class="triple_stack">
   <% components.each do |component| %>
     <div class="inner">
@@ -12,5 +13,36 @@
     </div>
   <% end %>
 </section>
+<% end %>
 
+<% erbv_css do %>
+  <style>
+    <%= erbv_component_base_selector %> .triple_stack {
+      display: grid;
+      align-items: start;
+      grid-row-gap: 2rem;
+    }
 
+    @container <%= erbv_css_container_query_id %> (width >= 768px) {
+      <%= erbv_component_base_selector %> .triple_stack {
+        grid-template-columns: repeat(8, 1fr);
+        grid-gap: 1.5rem;
+
+        .inner {
+          grid-column: span 8;
+        }
+      }
+    }
+
+    @container <%= erbv_css_container_query_id %> (width >= 960px) {
+      <%= erbv_component_base_selector %> .triple_stack {
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap: 2rem;
+
+        .inner {
+          grid-column: span 4;
+        }
+      }
+    }
+  </style>
+<% end %>
