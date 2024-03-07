@@ -1,31 +1,16 @@
+<%# locals: (components: []) -%>
+
 <section class="triple_stack">
-  <div class="inner">
-    <%= render "erbv/components/thumb_link",
-                                        img_src: "https://www.polestar.com/dato-assets/11286/1674207785-01-2-polestar-home-handoff-section-m-3x.jpg?w=620",
-                                        href: "https://www.polestar.com/uk",
-                                        title: "At home test drive",
-                                        subtitle: "We'll bring the experience, and the car, to you"
-                                      %>
-  </div>
-
-  <div class="inner">
-    <%= render "erbv/components/thumb_link",
-                                        img_src: "https://www.polestar.com/dato-assets/11286/1674208835-01-3-polestar-home-handoff-section-m-3x.jpg?w=620",
-                                        href: "https://www.polestar.com/uk/fleet/",
-                                        title: "Discover company car benefits",
-                                        subtitle: "Explore fleet and business",
-                                        theme: 'cta',
-                                        style: '--background-color: red;'
-                                      %>
-  </div>
-
-  <div class="inner">
-    <%= render "erbv/components/thumb_link",
-                                        img_src: "https://www.polestar.com/dato-assets/11286/1674207785-01-2-polestar-home-handoff-section-m-3x.jpg?w=620",
-                                        href: "https://www.polestar.com/uk/fleet/",
-                                        title: "Visit a Polestar location",
-                                        subtitle: "See all locations in the United Kingdom"
-
-                                      %>
-  </div>
+  <% components.each do |component| %>
+    <div class="inner">
+      <%= render "erbv/components/#{component[:self_name]}",
+                                          img_src: component[:img_src],
+                                          href: component[:link_href],
+                                          title: component[:title],
+                                          subtitle:component[:subtitle]
+                                        %>
+    </div>
+  <% end %>
 </section>
+
+
