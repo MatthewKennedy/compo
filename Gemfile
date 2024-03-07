@@ -67,3 +67,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# gem "erbv", path: "../erbv"
+
+gem "erbv", github: "MatthewKennedy/erbv"

@@ -1,0 +1,13 @@
+<%# locals: (theme: nil, style: nil) -%>
+
+<%= erbv_html(tag: :section, theme: theme, style: style) do %>
+  <%= yield %>
+<% end %>
+
+<% erbv_css do %>
+  <style>
+    <%= erbv_component_base_selector %> {
+      overflow: hidden;
+    }
+  </style>
+<% end %>
