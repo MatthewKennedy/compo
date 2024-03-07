@@ -4,7 +4,7 @@
 <section class="triple_stack">
   <% components.each do |component| %>
     <div class="inner">
-      <%= render "erbv/components/#{component[:self_name]}",
+      <%= render "erbv/components/thumb_links/thumb_link",
                                           img_src: component[:img_src],
                                           href: component[:link_href],
                                           title: component[:title],

@@ -1,23 +1,21 @@
-<%= render "erbv/sections/three_stack", components: [
-                                                      {
-                                                        self_name: "thumb_link",
-                                                        img_src: "https://www.polestar.com/dato-assets/11286/1674207785-01-2-polestar-home-handoff-section-m-3x.jpg?w=620",
-                                                        link_href: "https://www.polestar.com/uk",
-                                                        title: "At home test drive",
-                                                        subtitle: "We'll bring the experience, and the car, to you"
-                                                      },
-                                                      {
-                                                        self_name: "thumb_link",
-                                                        img_src: "https://www.polestar.com/dato-assets/11286/1674208835-01-3-polestar-home-handoff-section-m-3x.jpg?w=620",
-                                                        link_href: "https://www.polestar.com/uk/fleet/",
-                                                        title: "Discover company car benefits",
-                                                        subtitle: "Explore fleet and business",
-                                                      },
-                                                      {
-                                                        self_name: "thumb_link",
-                                                        img_src: "https://www.polestar.com/dato-assets/11286/1674207785-01-2-polestar-home-handoff-section-m-3x.jpg?w=620",
-                                                        link_href: "https://www.polestar.com/uk/fleet/",
-                                                        title: "Visit a Polestar location",
-                                                        subtitle: "See all locations in the United Kingdom"
-                                                      }
-                                                    ] %>
+<%= render "erbv/components/thumb_links/thumb_link_list",
+      components: [
+                    {
+                      img_src: "https://www.polestar.com/dato-assets/11286/1674207785-01-2-polestar-home-handoff-section-m-3x.jpg?w=620",
+                      link_href: "https://www.polestar.com/uk",
+                      title: "At home test drive",
+                      subtitle: "We'll bring the experience, and the car, to you"
+                    },
+                    {
+                      img_src: "https://www.polestar.com/dato-assets/11286/1674208835-01-3-polestar-home-handoff-section-m-3x.jpg?w=620",
+                      link_href: "https://www.polestar.com/uk/fleet/",
+                      title: "Discover company car benefits",
+                      subtitle: "Explore fleet and business",
+                    },
+                    {
+                      img_src: "https://www.polestar.com/dato-assets/11286/1674207785-01-2-polestar-home-handoff-section-m-3x.jpg?w=620",
+                      link_href: "https://www.polestar.com/uk/fleet/",
+                      title: "Visit a Polestar location",
+                      subtitle: "See all locations in the United Kingdom"
+                    }
+                ] %>
